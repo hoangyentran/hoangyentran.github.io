@@ -12,3 +12,16 @@
 .container{
 	margin-bottom:200px;
 }
+
+@media (max-width:375px){
+  .nenbanner img{
+      height:100% !important;
+	  margin-bottom: 0px !important;
+}
+	.icon-item{
+		margin-top: 0px !important;
+}
+    .bannertext h1{
+		font-size: 100% !important;
+}
+}

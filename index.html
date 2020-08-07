@@ -12,19 +12,32 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="main.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<style>
+		#mybtn{
+			position: fixed;
+			display: none;
+			z-inder:999999;
+			cursor: pointer;
+			bottom: 20px;
+			right: 30px;
+			border: none;
+			outline: none;
+			width: 80px;
+		</style>
 </head>
 
 <body>
+	 <button onClick="topFunction()" id="mybtn" title="On Top" type="button" class="btn btn-secondary">Click</button>
 	<nav class="navbar navbar-light bg-light static-top">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="#">ID Thay Nhan</a>
         <a class="btn btn-primary" href="#">Sign In</a>
     </div>
 	</nav>
-	<div class="carousel-inner">
-		<img src="img/bg-masthead.jpg" height="400px" alt="s1">
-		<div class="carousel-caption">
-			<h1 class="display-4">Build a landing page for your business or project and generate more leads!</h1>
+	<div class="carousel-inner nenbanner">
+		<img src="img/bg-masthead.jpg" height="500px" alt="s1">
+		<div class="carousel-caption bannertext">
+			<h1>Build a landing page for your business or project and generate more leads!</h1>
 			<form>
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
@@ -59,7 +72,7 @@
 	  </div>
 	</div>
 	</div>
-	
+
 	<div class="container-fluid">
 		<div class="row">
 		<div class="col-md-6 col-sm-12 my-auto">
@@ -71,6 +84,7 @@
 			</div> 
 		</div>
 	</div>
+	
 	
 	<div class="container-fluid">
 		<div class="row">
@@ -187,10 +201,29 @@
     </div>
   </footer>
 	
-	<script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+	<script>
 	
+    //Get the button
+    var mybutton = document.getElementById("mybtn");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    
+	</script>
 	
 	
    
